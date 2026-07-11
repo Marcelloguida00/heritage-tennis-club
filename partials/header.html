@@ -1,23 +1,20 @@
-<!-- ==========================================================================
-     Header — navigazione fissa con menu desktop e mobile
-     ========================================================================== -->
+<!-- Header — navigazione glass con pill menu -->
 <header class="site-header">
   <div class="container site-header__inner">
 
-    <!-- Logo / brand -->
     <a href="#top" class="site-header__brand">
+      <span class="site-header__brand-mark" aria-hidden="true">H</span>
       Heritage
-      <span class="site-header__brand-sub">Tennis Club</span>
+      <span class="site-header__brand-sub">Tennis Club · Airola</span>
     </a>
 
-    <!-- Menu desktop -->
     <nav class="site-nav" aria-label="Navigazione principale">
-      <a href="#struttura" class="site-nav__link">Struttura</a>
-      <a href="#circolo" class="site-nav__link">Circolo</a>
-      <a href="#squadra" class="site-nav__link">Squadra</a>
-      <a href="#corsi" class="site-nav__link">Corsi</a>
-      <a href="#prenota" class="site-nav__link">Prenota</a>
-      <a href="#contatti" class="site-nav__link">Contatti</a>
+      <a href="#struttura" class="site-nav__link" data-nav="struttura">Struttura</a>
+      <a href="#circolo" class="site-nav__link" data-nav="circolo">Circolo</a>
+      <a href="#squadra" class="site-nav__link" data-nav="squadra">Squadra</a>
+      <a href="#corsi" class="site-nav__link" data-nav="corsi">Corsi</a>
+      <a href="#prenota" class="site-nav__link" data-nav="prenota">Prenota</a>
+      <a href="#contatti" class="site-nav__link" data-nav="contatti">Contatti</a>
       <a
         href="https://wa.me/393291913327?text=Ciao%2C%20voglio%20prenotare%20una%20lezione"
         class="site-nav__cta"
@@ -28,7 +25,6 @@
       </a>
     </nav>
 
-    <!-- Toggle menu mobile -->
     <button
       class="menu-toggle"
       type="button"
@@ -36,7 +32,7 @@
       aria-expanded="false"
       aria-controls="mobile-nav"
     >
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
         <line x1="3" y1="6" x2="21" y2="6"/>
         <line x1="3" y1="12" x2="21" y2="12"/>
         <line x1="3" y1="18" x2="21" y2="18"/>
@@ -44,7 +40,6 @@
     </button>
   </div>
 
-  <!-- Menu mobile (nascosto di default) -->
   <nav id="mobile-nav" class="mobile-nav" aria-label="Menu mobile">
     <a href="#struttura" class="mobile-nav__link">Struttura</a>
     <a href="#circolo" class="mobile-nav__link">Circolo</a>
@@ -62,3 +57,14 @@
     </a>
   </nav>
 </header>
+
+<!-- Progress nav laterale (desktop) -->
+<nav class="progress-nav" aria-label="Progresso sezioni">
+  <button class="progress-nav__dot" data-section="top" aria-label="Inizio" type="button"></button>
+  <button class="progress-nav__dot" data-section="struttura" aria-label="Struttura" type="button"></button>
+  <button class="progress-nav__dot" data-section="circolo" aria-label="Circolo" type="button"></button>
+  <button class="progress-nav__dot" data-section="squadra" aria-label="Squadra" type="button"></button>
+  <button class="progress-nav__dot" data-section="corsi" aria-label="Corsi" type="button"></button>
+  <button class="progress-nav__dot" data-section="prenota" aria-label="Prenota" type="button"></button>
+  <button class="progress-nav__dot" data-section="contatti" aria-label="Contatti" type="button"></button>
+</nav>

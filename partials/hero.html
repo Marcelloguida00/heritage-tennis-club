@@ -1,67 +1,90 @@
-<!-- ==========================================================================
-     Hero — sezione introduttiva a tutto schermo con immagine e CTA
-     ========================================================================== -->
+<!-- Hero — cinematografico con pannello stats glass -->
 <section id="top" class="hero">
-  <!-- Immagine di sfondo -->
-  <img
-    class="hero__bg"
-    src="assets/images/hero.jpg"
-    alt="Campo da tennis in cemento dell'Heritage Tennis Club con le montagne del Taburno sullo sfondo"
-    width="1920"
-    height="1080"
-  >
+  <div class="hero__media" aria-hidden="true">
+    <img
+      class="hero__bg"
+      src="assets/images/hero.jpg"
+      alt=""
+      width="1920"
+      height="1080"
+      fetchpriority="high"
+    >
+    <div class="hero__overlay"></div>
+  </div>
 
-  <!-- Gradienti scuri per leggibilità del testo -->
-  <div class="hero__overlay" aria-hidden="true"></div>
+  <div class="hero__layout">
+    <div class="hero__main reveal">
+      <p class="hero__eyebrow">Airola · Monte Taburno</p>
 
-  <div class="container hero__content">
-    <p class="section-label section-label--ember">Airola · Ai piedi del Monte Taburno</p>
+      <h1 class="hero__title">
+        Il tennis e il padel,
+        <em>a due passi da casa.</em>
+      </h1>
 
-    <h1 class="hero__title">
-      Il tennis e il padel,<br>
-      <em>a due passi da casa.</em>
-    </h1>
+      <p class="hero__subtitle">
+        Quattro campi tra tennis e padel, coperti e scoperti, un circolo con bar,
+        lezioni con maestri FIT e vista sul Taburno — tutto in legno, tutto ad Airola.
+      </p>
 
-    <p class="hero__subtitle">
-      Due campi da tennis e due campi da padel, coperti e scoperti, un bar interno
-      per il circolo, lezioni individuali e corsi per adulti e bambini — in un club
-      costruito in legno e vista montagna.
-    </p>
-
-    <!-- Call to action principali -->
-    <div class="hero__actions">
-      <a
-        href="https://wa.me/393291913327?text=Ciao%2C%20voglio%20prenotare%20una%20lezione"
-        class="btn btn--ember"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Prenota una lezione
-      </a>
-      <a href="#prenota" class="btn btn--outline-paper">
-        Prenotazione campi →
-      </a>
+      <div class="hero__actions">
+        <a
+          href="https://wa.me/393291913327?text=Ciao%2C%20voglio%20prenotare%20una%20lezione"
+          class="btn btn--primary"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Prenota una lezione
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#prenota" class="btn btn--ghost-light">
+          Prenota un campo
+        </a>
+      </div>
     </div>
 
-    <!-- Statistiche rapide -->
-    <dl class="hero__stats">
+    <dl class="hero__panel reveal reveal-delay-2">
       <div class="hero__stat">
         <dt>Campi</dt>
         <dd>4</dd>
       </div>
       <div class="hero__stat">
         <dt>Discipline</dt>
-        <dd>Tennis / Padel</dd>
+        <dd>Tennis · Padel</dd>
       </div>
       <div class="hero__stat">
         <dt>Orari</dt>
-        <dd>08–23</dd>
+        <dd>08 – 23</dd>
+      </div>
+      <div class="hero__stat">
+        <dt>Serie FIT</dt>
+        <dd>Serie C</dd>
       </div>
     </dl>
   </div>
 
-  <!-- Separatore onda verso la sezione successiva -->
-  <svg class="wave-divider wave-divider--bottom" viewBox="0 0 1440 160" preserveAspectRatio="none" aria-hidden="true">
-    <path fill="#F4EFE3" d="M0,160 L0,98 L58,84 L121,92 L179,58 L233,70 L289,42 L344,52 L392,30 L437,44 L481,20 L523,34 L566,16 L614,26 L662,12 L706,24 L748,10 L797,22 L846,8 L889,20 L931,14 L972,26 L1018,18 L1063,30 L1112,20 L1158,34 L1201,26 L1246,40 L1291,32 L1336,48 L1382,44 L1440,58 L1440,160 Z"/>
-  </svg>
+  <a href="#struttura" class="hero__scroll" aria-label="Scorri verso il basso">
+    Scorri
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </a>
 </section>
+
+<!-- Marquee strip -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-strip__track">
+    <span class="marquee-strip__item"><span>●</span> Tennis coperto & scoperto</span>
+    <span class="marquee-strip__item"><span>●</span> Padel coperto & scoperto</span>
+    <span class="marquee-strip__item"><span>●</span> Bar del circolo</span>
+    <span class="marquee-strip__item"><span>●</span> Lezioni individuali</span>
+    <span class="marquee-strip__item"><span>●</span> Campionato Serie C FIT</span>
+    <span class="marquee-strip__item"><span>●</span> Prenotazione Playtomic</span>
+    <span class="marquee-strip__item"><span>●</span> Via Lavatoio, Airola</span>
+    <!-- duplicato per loop seamless -->
+    <span class="marquee-strip__item"><span>●</span> Tennis coperto & scoperto</span>
+    <span class="marquee-strip__item"><span>●</span> Padel coperto & scoperto</span>
+    <span class="marquee-strip__item"><span>●</span> Bar del circolo</span>
+    <span class="marquee-strip__item"><span>●</span> Lezioni individuali</span>
+    <span class="marquee-strip__item"><span>●</span> Campionato Serie C FIT</span>
+    <span class="marquee-strip__item"><span>●</span> Prenotazione Playtomic</span>
+    <span class="marquee-strip__item"><span>●</span> Via Lavatoio, Airola</span>
+  </div>
+</div>

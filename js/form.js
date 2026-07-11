@@ -5,12 +5,12 @@ import { CONFIG } from "./config.js";
  */
 export function initForm() {
   const form = document.getElementById("tessera-form");
-  const panel = document.getElementById("tessera-panel");
+  const formView = document.getElementById("tessera-form-view");
   const success = document.getElementById("tessera-success");
   const errorEl = document.getElementById("tessera-error");
   const submitBtn = document.getElementById("tessera-submit");
 
-  if (!form || !panel || !success) return;
+  if (!form || !formView || !success) return;
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -52,7 +52,7 @@ export function initForm() {
       const result = await response.json();
 
       if (result.success) {
-        panel.hidden = true;
+        formView.hidden = true;
         success.hidden = false;
         const nameEl = success.querySelector("[data-success-name]");
         if (nameEl) nameEl.textContent = nome;

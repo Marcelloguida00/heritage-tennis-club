@@ -1,15 +1,13 @@
-<!-- ==========================================================================
-     Corsi — maestri e tipologie di lezione
-     ========================================================================== -->
+<!-- Corsi — maestri card + griglia servizi -->
 <section id="corsi" class="section section--paper">
   <div class="container">
-    <p class="section-label section-label--wood">04 — Corsi e lezioni</p>
+    <p class="section-label section-label--wood reveal">04 — Corsi e lezioni</p>
 
     <div class="corsi-header">
-      <h2 class="section-title">Con i nostri maestri.</h2>
+      <h2 class="section-title reveal reveal-delay-1">Con i nostri maestri.</h2>
       <a
         href="https://wa.me/393291913327?text=Ciao%2C%20voglio%20prenotare%20una%20lezione"
-        class="btn btn--outline-ink"
+        class="btn btn--ghost-dark reveal reveal-delay-2"
         target="_blank"
         rel="noreferrer"
       >
@@ -17,55 +15,52 @@
       </a>
     </div>
 
-    <!-- Elenco maestri -->
-    <div class="maestri-list">
-      <div class="maestro">
-        <span class="maestro__name">Giuseppe Abbate</span>
-        <span class="maestro__role">Maestro</span>
-      </div>
-      <div class="maestro">
-        <span class="maestro__name">Giovanni Pio Abbate</span>
-        <span class="maestro__role">Maestro</span>
-      </div>
+    <div class="maestri-grid">
+      <article class="maestro-card reveal">
+        <div class="maestro-card__avatar" aria-hidden="true">G</div>
+        <div>
+          <span class="maestro-card__name">Giuseppe Abbate</span>
+          <span class="maestro-card__role">Maestro FIT</span>
+        </div>
+      </article>
+      <article class="maestro-card reveal reveal-delay-1">
+        <div class="maestro-card__avatar" aria-hidden="true">G</div>
+        <div>
+          <span class="maestro-card__name">Giovanni Pio Abbate</span>
+          <span class="maestro-card__role">Maestro FIT</span>
+        </div>
+      </article>
     </div>
 
-    <!-- Tipologie di corso -->
     <div class="corsi-grid">
-      <div class="feature-item">
-        <span class="feature-item__num">01</span>
-        <h3 class="feature-item__title">Lezioni individuali</h3>
-        <p class="feature-item__text">
-          Programmi di allenamento personalizzati, uno a uno con il maestro,
-          su misura per il tuo livello e i tuoi obiettivi.
+      <article class="feature-card reveal">
+        <span class="feature-card__num">01</span>
+        <h3 class="feature-card__title">Lezioni individuali</h3>
+        <p class="feature-card__text">
+          Allenamento personalizzato uno a uno, su misura per livello e obiettivi.
         </p>
-      </div>
-
-      <div class="feature-item">
-        <span class="feature-item__num">02</span>
-        <h3 class="feature-item__title">Corsi collettivi</h3>
-        <p class="feature-item__text">
-          Corsi per adulti e bambini, in piccoli gruppi, per imparare o migliorare
-          la tecnica insieme ad altri giocatori.
+      </article>
+      <article class="feature-card reveal reveal-delay-1">
+        <span class="feature-card__num">02</span>
+        <h3 class="feature-card__title">Corsi collettivi</h3>
+        <p class="feature-card__text">
+          Adulti e bambini in piccoli gruppi, per imparare o migliorare insieme.
         </p>
-      </div>
-
-      <div class="feature-item">
-        <span class="feature-item__num">03</span>
-        <h3 class="feature-item__title">Videocorsi online</h3>
-        <p class="feature-item__text">
-          Programmi di allenamento a distanza, da seguire con i propri tempi,
-          con materiale video dedicato.
+      </article>
+      <article class="feature-card reveal reveal-delay-2">
+        <span class="feature-card__num">03</span>
+        <h3 class="feature-card__title">Videocorsi online</h3>
+        <p class="feature-card__text">
+          Programmi a distanza con materiale video, ai tuoi tempi.
         </p>
-      </div>
-
-      <div class="feature-item">
-        <span class="feature-item__num">04</span>
-        <h3 class="feature-item__title">Consulenza privata</h3>
-        <p class="feature-item__text">
-          Un servizio di consulenza esclusivo per l'impostazione tecnica,
-          tattica e di preparazione atletica.
+      </article>
+      <article class="feature-card reveal reveal-delay-3">
+        <span class="feature-card__num">04</span>
+        <h3 class="feature-card__title">Consulenza privata</h3>
+        <p class="feature-card__text">
+          Impostazione tecnica, tattica e preparazione atletica su misura.
         </p>
-      </div>
+      </article>
     </div>
   </div>
 </section>

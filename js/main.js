@@ -1,14 +1,14 @@
 import { loadPartials } from "./loader.js";
 import { initNav } from "./nav.js";
 import { initForm, initPlaytomic, initFooter } from "./form.js";
+import { initReveal, initHeroReveal } from "./animations.js";
 
-/**
- * Avvio applicazione: carica le sezioni HTML e inizializza l'interattività.
- */
 async function bootstrap() {
   try {
     await loadPartials();
+    initHeroReveal();
     initNav();
+    initReveal();
     initForm();
     initPlaytomic();
     initFooter();

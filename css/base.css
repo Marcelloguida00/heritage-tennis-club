@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Base — reset leggero, tipografia e utilità globali
+   Base — reset, tipografia, utilità globali
    ========================================================================== */
 
 *,
@@ -17,10 +17,31 @@ body {
   margin: 0;
   font-family: var(--font-sans);
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
   color: var(--color-ink);
   background: var(--color-paper);
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Texture granulosa sottile su tutto il sito */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+[hidden] {
+  display: none !important;
+}
+
+::selection {
+  background: var(--color-ember);
+  color: var(--color-paper);
 }
 
 img {
@@ -42,81 +63,86 @@ textarea {
   color: inherit;
 }
 
-/* Classi tipografiche riutilizzabili */
-.font-display {
-  font-family: var(--font-display);
+:focus-visible {
+  outline: 2px solid var(--color-ember);
+  outline-offset: 3px;
 }
 
-.font-mono {
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 10000;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-ember);
+  color: var(--color-ink);
   font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
 }
 
-.text-balance {
-  text-wrap: balance;
+.skip-link:focus {
+  top: 1rem;
 }
 
-/* Etichetta sezione (es. "01 — La struttura") */
+.font-display { font-family: var(--font-display); }
+.font-mono { font-family: var(--font-mono); }
+.text-balance { text-wrap: balance; }
+
+/* Etichetta sezione — allineata a sinistra, senza offset */
 .section-label {
+  display: block;
   font-family: var(--font-mono);
   font-size: 0.6875rem;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .section-label--ember { color: var(--color-ember); }
 .section-label--wood { color: var(--color-wood); }
+.section-label--paper { color: var(--color-paper-70); }
 
-/* Titolo sezione */
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(2.25rem, 5vw, 3rem);
-  line-height: 1.05;
-  max-width: 36rem;
+  font-size: clamp(2.5rem, 5.5vw, 3.75rem);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  max-width: 16ch;
 }
 
 .section-title--spaced {
-  margin-bottom: 3.5rem;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
-/* Contenitore centrato */
 .container {
   width: 100%;
   max-width: var(--container-max);
   margin-inline: auto;
-  padding-inline: 1.5rem;
+  padding-inline: clamp(1.25rem, 4vw, 2.5rem);
 }
 
-@media (min-width: 768px) {
-  .container {
-    padding-inline: 2.5rem;
-  }
+.section {
+  position: relative;
+  padding-block: var(--section-padding-y);
 }
 
-/* Separatore onda tra sezioni */
-.wave-divider {
-  display: block;
-  width: 100%;
-  height: 4rem;
-  pointer-events: none;
+.section--paper {
+  background: var(--color-paper);
+  color: var(--color-ink);
 }
 
-@media (min-width: 768px) {
-  .wave-divider {
-    height: 5rem;
-  }
+.section--ink {
+  background: var(--color-ink);
+  color: var(--color-paper);
 }
 
-.wave-divider--bottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 5;
+.section--warm {
+  background: linear-gradient(180deg, var(--color-paper-warm) 0%, var(--color-paper) 100%);
 }
 
-.wave-divider--top {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translateY(-100%);
-}
+/* Separatore sottile tra sezioni */
+.u-mt-lg { margin-top: 1.5rem; }
