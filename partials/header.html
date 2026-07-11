@@ -1,0 +1,64 @@
+<!-- ==========================================================================
+     Header — navigazione fissa con menu desktop e mobile
+     ========================================================================== -->
+<header class="site-header">
+  <div class="container site-header__inner">
+
+    <!-- Logo / brand -->
+    <a href="#top" class="site-header__brand">
+      Heritage
+      <span class="site-header__brand-sub">Tennis Club</span>
+    </a>
+
+    <!-- Menu desktop -->
+    <nav class="site-nav" aria-label="Navigazione principale">
+      <a href="#struttura" class="site-nav__link">Struttura</a>
+      <a href="#circolo" class="site-nav__link">Circolo</a>
+      <a href="#squadra" class="site-nav__link">Squadra</a>
+      <a href="#corsi" class="site-nav__link">Corsi</a>
+      <a href="#prenota" class="site-nav__link">Prenota</a>
+      <a href="#contatti" class="site-nav__link">Contatti</a>
+      <a
+        href="https://wa.me/393291913327?text=Ciao%2C%20voglio%20prenotare%20una%20lezione"
+        class="site-nav__cta"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Prenota lezione
+      </a>
+    </nav>
+
+    <!-- Toggle menu mobile -->
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Apri il menu"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+    >
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Menu mobile (nascosto di default) -->
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Menu mobile">
+    <a href="#struttura" class="mobile-nav__link">Struttura</a>
+    <a href="#circolo" class="mobile-nav__link">Circolo</a>
+    <a href="#squadra" class="mobile-nav__link">Squadra</a>
+    <a href="#corsi" class="mobile-nav__link">Corsi</a>
+    <a href="#prenota" class="mobile-nav__link">Prenota</a>
+    <a href="#contatti" class="mobile-nav__link">Contatti</a>
+    <a
+      href="https://wa.me/393291913327?text=Ciao%2C%20voglio%20prenotare%20una%20lezione"
+      class="mobile-nav__cta"
+      target="_blank"
+      rel="noreferrer"
+    >
+      Prenota lezione
+    </a>
+  </nav>
+</header>

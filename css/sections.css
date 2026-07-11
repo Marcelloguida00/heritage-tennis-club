@@ -1,0 +1,407 @@
+/* ==========================================================================
+   Sezioni — stili specifici per hero, struttura, circolo, ecc.
+   ========================================================================== */
+
+/* --- Hero --- */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  background: var(--color-ink);
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 65% 30%;
+  opacity: 0.9;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, var(--color-ink), rgba(18, 24, 27, 0.35) 50%, rgba(18, 24, 27, 0.1)),
+    linear-gradient(to right, rgba(18, 24, 27, 0.7), rgba(18, 24, 27, 0.1) 60%, transparent);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 100svh;
+  padding-top: calc(var(--header-height) + 2rem);
+  padding-bottom: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .hero__content {
+    padding-bottom: 7rem;
+  }
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 6vw, 4.5rem);
+  line-height: 1.08;
+  color: var(--color-paper);
+  max-width: 48rem;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .hero__title {
+    line-height: 0.98;
+  }
+}
+
+.hero__title em {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.hero__subtitle {
+  margin-top: 1.25rem;
+  max-width: 28rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-paper-75);
+}
+
+@media (min-width: 768px) {
+  .hero__subtitle {
+    margin-top: 1.75rem;
+    font-size: 1rem;
+  }
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .hero__actions {
+    margin-top: 2.25rem;
+  }
+}
+
+.hero__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 28rem;
+  margin-top: 2.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(244, 239, 227, 0.2);
+}
+
+@media (min-width: 768px) {
+  .hero__stats {
+    margin-top: 3.5rem;
+  }
+}
+
+.hero__stat dt {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(244, 239, 227, 0.5);
+}
+
+.hero__stat dd {
+  font-family: var(--font-display);
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  color: var(--color-paper);
+  margin: 0.25rem 0 0;
+}
+
+/* --- Sezioni generiche --- */
+.section {
+  padding-block: var(--section-padding-y);
+}
+
+.section--paper {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.section--ink {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.section--ink .section-header__desc {
+  color: var(--color-paper-60);
+}
+
+/* --- Struttura: griglia campi --- */
+.courts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--color-ink-10);
+}
+
+@media (min-width: 640px) {
+  .courts-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* --- Circolo --- */
+.circolo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--color-paper-10);
+  margin-bottom: 1px;
+}
+
+@media (min-width: 768px) {
+  .circolo-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.circolo-grid__photo {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--color-ink);
+}
+
+.circolo-grid__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.circolo-features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--color-paper-15);
+}
+
+@media (min-width: 768px) {
+  .circolo-features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.circolo-features .feature-item__text {
+  color: var(--color-paper-60);
+}
+
+.circolo-features__link {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-ember);
+  transition: color var(--transition-fast);
+}
+
+.circolo-features__link:hover {
+  color: var(--color-wood-light);
+}
+
+/* --- Squadra --- */
+.squadra-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .squadra-grid {
+    grid-template-columns: 1fr auto;
+    gap: 4rem;
+  }
+}
+
+.squadra-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.squadra-badge__label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-wood);
+}
+
+.squadra-badge__value {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 3rem);
+}
+
+.squadra-photo {
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+}
+
+.squadra-photo img {
+  width: 100%;
+  height: auto;
+}
+
+.squadra-text {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--color-ink-65);
+  max-width: 40rem;
+}
+
+/* --- Corsi --- */
+.corsi-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-ink-12);
+}
+
+@media (min-width: 768px) {
+  .corsi-header {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.maestri-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem 2.5rem;
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-ink-12);
+}
+
+.maestro__name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+}
+
+.maestro__role {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(18, 24, 27, 0.5);
+  margin-left: 0.75rem;
+}
+
+.corsi-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .corsi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .corsi-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.corsi-grid .feature-item__text {
+  color: var(--color-ink-65);
+}
+
+/* --- Prenota --- */
+.prenota-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .prenota-grid {
+    grid-template-columns: 0.85fr 1.15fr;
+  }
+}
+
+.playtomic-widget {
+  border: 1px solid var(--color-ink-12);
+  background: rgba(255, 255, 255, 0.4);
+  overflow: hidden;
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+}
+
+.playtomic-widget iframe {
+  width: 100%;
+  flex: 1;
+  min-height: 560px;
+  border: none;
+}
+
+.playtomic-placeholder {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2.5rem;
+  gap: 1rem;
+  color: rgba(18, 24, 27, 0.55);
+}
+
+.playtomic-placeholder svg {
+  color: rgba(18, 24, 27, 0.3);
+}
+
+.playtomic-placeholder__title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--color-ink);
+  margin-bottom: 0.5rem;
+}
+
+.info-panel__footer {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(18, 24, 27, 0.5);
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-ink-12);
+}
+
+/* --- Contatti --- */
+.contatti-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  .contatti-grid {
+    grid-template-columns: 1fr 1.1fr;
+  }
+}

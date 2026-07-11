@@ -1,0 +1,122 @@
+/* ==========================================================================
+   Base — reset leggero, tipografia e utilità globali
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-ink);
+  background: var(--color-paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+/* Classi tipografiche riutilizzabili */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Etichetta sezione (es. "01 — La struttura") */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.section-label--ember { color: var(--color-ember); }
+.section-label--wood { color: var(--color-wood); }
+
+/* Titolo sezione */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 3rem);
+  line-height: 1.05;
+  max-width: 36rem;
+}
+
+.section-title--spaced {
+  margin-bottom: 3.5rem;
+}
+
+/* Contenitore centrato */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-inline: 2.5rem;
+  }
+}
+
+/* Separatore onda tra sezioni */
+.wave-divider {
+  display: block;
+  width: 100%;
+  height: 4rem;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .wave-divider {
+    height: 5rem;
+  }
+}
+
+.wave-divider--bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.wave-divider--top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+}

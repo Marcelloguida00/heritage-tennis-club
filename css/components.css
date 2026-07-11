@@ -1,0 +1,357 @@
+/* ==========================================================================
+   Componenti — bottoni, card, form, badge, icone
+   ========================================================================== */
+
+/* --- Bottoni --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.875rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.btn--ember {
+  background: var(--color-ember);
+  color: var(--color-ink);
+}
+
+.btn--ember:hover {
+  background: var(--color-wood-light);
+}
+
+.btn--outline-paper {
+  background: transparent;
+  color: var(--color-paper);
+  border: 1px solid var(--color-paper-35);
+}
+
+.btn--outline-paper:hover {
+  border-color: var(--color-paper);
+}
+
+.btn--outline-ink {
+  background: transparent;
+  color: var(--color-ink);
+  border: 1px solid rgba(18, 24, 27, 0.25);
+}
+
+.btn--outline-ink:hover {
+  border-color: var(--color-court);
+  color: var(--color-court);
+}
+
+.btn--ink {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.btn--ink:hover {
+  background: var(--color-court);
+}
+
+.btn--full {
+  width: 100%;
+}
+
+/* --- Card campo / servizio --- */
+.court-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-paper);
+}
+
+.court-card__image {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.court-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.court-card:hover .court-card__image img {
+  transform: scale(1.04);
+}
+
+.court-card__body {
+  padding: 1.25rem 1.5rem 1.5rem;
+  border-top: 1px solid var(--color-ink-10);
+}
+
+.court-card__tag {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-wood);
+}
+
+.court-card__title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  margin: 0.375rem 0 0.5rem;
+}
+
+.court-card__text {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-ink-65);
+}
+
+/* --- Feature numerata (circolo, corsi) --- */
+.feature-item__num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-ember);
+}
+
+.feature-item__title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin: 0.5rem 0 0.5rem;
+}
+
+.feature-item__text {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-paper-60);
+}
+
+/* --- Badge --- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+}
+
+.badge--live {
+  background: var(--color-ink);
+  color: var(--color-ember);
+}
+
+.badge--live::before {
+  content: "";
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  background: var(--color-ember);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 1px solid rgba(18, 24, 27, 0.2);
+  color: var(--color-ink-65);
+  padding: 0.375rem 0.75rem;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.btn-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* --- Lista contatti --- */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  border: 1px solid var(--color-ink-12);
+}
+
+.contact-list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--color-ink-10);
+  transition: background-color var(--transition-fast);
+}
+
+.contact-list__item:last-child {
+  border-bottom: none;
+}
+
+a.contact-list__item:hover {
+  background: rgba(18, 24, 27, 0.03);
+}
+
+.contact-list__icon {
+  flex-shrink: 0;
+  color: var(--color-wood);
+  margin-top: 0.125rem;
+}
+
+.contact-list__hint {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(18, 24, 27, 0.4);
+}
+
+/* --- Form tesseramento --- */
+.form-panel {
+  border: 1px solid var(--color-ink-12);
+  padding: 2rem;
+}
+
+@media (min-width: 768px) {
+  .form-panel {
+    padding: 2.5rem;
+  }
+}
+
+.form-panel__title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin-bottom: 0.375rem;
+}
+
+.form-panel__desc {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-ink-65);
+  margin-bottom: 2rem;
+}
+
+.form-field {
+  margin-bottom: 1.25rem;
+}
+
+.form-field label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(18, 24, 27, 0.5);
+  margin-bottom: 0.375rem;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-ink-12);
+  padding: 0.5rem 0;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--color-wood);
+}
+
+.form-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .form-grid--2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form-success {
+  text-align: center;
+  padding: 3rem 2rem;
+  border: 1px solid var(--color-ink-12);
+}
+
+.form-success__title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.form-success__text {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-ink-65);
+}
+
+.form-error {
+  font-size: 0.875rem;
+  color: #dc2626;
+  margin-top: 0.75rem;
+}
+
+/* --- Pannello info (Playtomic) --- */
+.info-panel {
+  border: 1px solid var(--color-ink-12);
+  background: rgba(255, 255, 255, 0.4);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .info-panel {
+    padding: 2.5rem;
+  }
+}
+
+.amenity-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.amenity-item {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.875rem;
+  color: var(--color-ink-65);
+}
+
+.amenity-item svg {
+  flex-shrink: 0;
+  color: var(--color-wood);
+}
+
+/* --- Icone inline --- */
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+}

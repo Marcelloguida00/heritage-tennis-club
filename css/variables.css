@@ -1,0 +1,46 @@
+/* ==========================================================================
+   Design tokens — Heritage Tennis Club
+   Colori, font e spaziature condivisi da tutto il sito
+   ========================================================================== */
+
+:root {
+  /* Palette principale */
+  --color-ink: #12181b;
+  --color-paper: #f4efe3;
+  --color-ember: #e08a3e;
+  --color-wood: #a9713f;
+  --color-wood-light: #c99a63;
+  --color-court: #1c6e9c;
+
+  /* Trasparenze ricorrenti */
+  --color-ink-10: rgba(18, 24, 27, 0.1);
+  --color-ink-12: rgba(18, 24, 27, 0.12);
+  --color-ink-65: rgba(18, 24, 27, 0.65);
+  --color-paper-10: rgba(244, 239, 227, 0.1);
+  --color-paper-15: rgba(244, 239, 227, 0.15);
+  --color-paper-35: rgba(244, 239, 227, 0.35);
+  --color-paper-45: rgba(244, 239, 227, 0.45);
+  --color-paper-60: rgba(244, 239, 227, 0.6);
+  --color-paper-75: rgba(244, 239, 227, 0.75);
+
+  /* Tipografia */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Layout */
+  --container-max: 72rem;
+  --section-padding-y: 6rem;
+  --header-height: 4rem;
+
+  /* Transizioni */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --section-padding-y: 8rem;
+    --header-height: 5rem;
+  }
+}
